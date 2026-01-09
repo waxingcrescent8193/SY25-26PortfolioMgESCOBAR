@@ -1,39 +1,26 @@
 function getShows() {
-   const showList = getShowList(); // get the list of shows below into this function
-   const cat = showCat.value; // get the category selected by a user from the dropdown mendu
-
-  // construct the table content into rowString variable
-   rowString = "<tr><th>Index</th><th>Title</th><th>Casts</th><th>Year</th><th>Rating / Score</th></tr>";
-   results.innerHTML = "" // reset content of table for each getShows() function call
-   for (let ndx=0; ndx < showList.length; ndx++) {
-    if (cat == "All") {
-      rowString += "<tr>";
-      rowString += "<td>" + ndx + "</td>";
-      rowString += "<td>" + showList[ndx].title + "</td>";
-      rowString += "<td>" + showList[ndx].cast + "</td>";
-      rowString += "<td>" + showList[ndx].year + "</td>";
-      rowString += "<td>" + showList[ndx].ratingScore() + "</td></tr>";
-    }
-    
-    else {
-      if (showList[ndx].category == cat) { // include only the selected shows based on category
-        rowString += "<tr>";
-        rowString += "<td>" + ndx + "</td>";
-        rowString += "<td>" + showList[ndx].title + "</td>";
-        rowString += "<td>" + showList[ndx].cast + "</td>";
-        rowString += "<td>" + showList[ndx].year + "</td>";
-        rowString += "<td>" + showList[ndx].ratingScore() + "</td></tr>";
-      }
-    }
+   const showList = getShowList(); // get the object from the function
+   const cat = showCat.value;  // get the value from the drop down
+   //console.log(cat)
+   rowString = "<tr><th>Key</th><th>Title</th><th>Casts</th><th>Year</th><th>Rating / Score</th></tr>";
+  // results.innerHTML = ""  // resets the table
+   for (let key in showList) {
+     if (showList[key].category == cat  || cat == "All") {
+       rowString += "<tr>";
+       rowString += "<td>" + key + "</td>";
+       rowString += "<td>" + showList[key]['title'] + "</td>";
+       rowString += "<td>" + showList[key].cast + "</td>";
+       rowString += "<td>" + showList[key].year + "</td>";
+      rowString += "<td>" + showList[key].ratingScore() + "</td></tr>";
+     }
    }
-  
-   results.innerHTML = rowString; // show the table content on the browser
+   results.innerHTML = rowString;
 }
 
 function getShowList() {
   // sample of an array with objects
- const netflixShows = [
-  {
+ const netflixShows = {
+  breakingBad: {
     title: "Breaking Bad",
     category: "Drama",
     year: 2008,
@@ -49,7 +36,7 @@ function getShowList() {
       return this.rating + " / " + this.imdbScore;
     }
   },
-  {
+  theCrown: {
     title: "The Crown",
     category: "Drama",
     year: 2016,
@@ -65,7 +52,7 @@ function getShowList() {
       return this.rating + " / " + this.imdbScore;
     }
   },
-  {
+  brooklynNineNine: {
     title: "Brooklyn Nine-Nine",
     category: "Comedy",
     year: 2013,
@@ -81,7 +68,7 @@ function getShowList() {
       return this.rating + " / " + this.imdbScore;
     }
   },
-  {
+  sexEducation: {
     title: "Sex Education",
     category: "Comedy",
     year: 2019,
@@ -97,7 +84,7 @@ function getShowList() {
       return this.rating + " / " + this.imdbScore;
     }
   },
-  {
+  strangerThings: {
     title: "Stranger Things",
     category: "Sci-Fi",
     year: 2016,
@@ -113,7 +100,7 @@ function getShowList() {
       return this.rating + " / " + this.imdbScore;
     }
   },
-  {
+  blackMirror: {
     title: "Black Mirror",
     category: "Sci-Fi",
     year: 2011,
@@ -129,7 +116,7 @@ function getShowList() {
       return this.rating + " / " + this.imdbScore;
     }
   },
-  {
+  onePiece: {
     title: "One Piece",
     category: "Anime",
     year: 1999,
@@ -145,7 +132,7 @@ function getShowList() {
       return this.rating + " / " + this.imdbScore;
     }
   },
-  {
+  attackOnTitan: {
     title: "Attack on Titan",
     category: "Anime",
     year: 2013,
@@ -161,17 +148,12 @@ function getShowList() {
       return this.rating + " / " + this.imdbScore;
     }
   }
-];
+};
+
 
   return netflixShows;
 }
 
-function clearCategory() {
-  let outputString = "";
-
-  if(confirm("Delete all categories?")) {
-    outputString += "<tr><th>Index</th><th>Title</th><th>Casts</th><th>Year</th><th>Rating / Score</th></tr>";
-    results.innerHTML = outputString; 
-  }
-
+function delShows() {
+  ;
 }
