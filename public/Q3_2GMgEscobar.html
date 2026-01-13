@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CS3 Q3 2nd Graded Exercise">
+    <meta name="keywords" content="HTML Forms">
+    <meta name="author" content="Joanna Escobar">
+
+    <title>Club Applications Form</title>
+
+    <style>
+        * {
+            font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+            background-color: #9efffc;
+        }
+
+        nav {
+            background-color: #1ee8e2;
+            overflow:hidden;
+            position:sticky;
+            top: 0;
+        }
+
+        h2 {
+            text-align: center;
+            background-color: #1ee8e2;
+        }
+
+        form {
+            padding: 0 10px;
+        }
+
+        fieldset {
+            margin: 50px 0;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h2> Club Applications </h2>
+     </nav>
+
+    <form method="post" action="submit">
+        <fieldset form="identification">
+            <legend> Identification: </legend>
+
+            <label for="studentid"> StudentID 
+                <input type="number" id="studentid" name="studentid"> 
+            </label></br/>
+
+            <label for="fullName"> Full Name 
+                <input type="text" id="fullName" name="fullName"> 
+            </label></br/>
+
+            <label for="bday"> Birthday 
+                <input type="date" id="bday" name="bday"> 
+            </label></br/>
+
+
+            <label for="emailAddress"> Email address 
+                <input type="email" id="emailAddress" name="emailAddress"> 
+            </label></br/>
+        </fieldset>
+
+        <fieldset form="response">
+            <legend> Student Information: </legend>
+
+            <label for="phoneNo"> Mobile phone 
+                <input type="text" id="phoneNo" name="phoneNo"> 
+            </label></br/>
+
+            <label for="gradeLevel"> Grade Level </label>
+
+            <select name="gradeLevel" id="gradeLevel">
+                <option value="7"> Grade 7 </option>
+                <option value="8"> Grade 8 </option>
+                <option value="9"> Grade 9 </option>
+                <option value="10"> Grade 10 </option>
+                <option value="11"> Grade 11 </option>
+                <option value="12"> Grade 12 </option>
+            </select></br/>
+
+            <p> Are you an Intern/Extern? </p>
+            <input type="radio" id="intern" name="livingArrangements" value="Intern">
+            <label for="intern"> Intern </label>
+            <input type="radio" id="extern" name="livingArrangements" value="Extern">
+            <label for="extern"> Extern </label></br/>
+
+            <label for="preferredClub"> Preferred Organization/Club </label>
+
+            <select name="preferredClub" id="preferredClub">
+                <option value="Munhwa"> Munhwa </option>
+                <option value="Sapienara"> Sapienara </option>
+                <option value="AstroSoc"> AstroSoc </option>
+                <option value="Exposure"> Exposure </option>
+                <option value="PisayXYZ"> PisayXYZ </option>
+            </select></br/>
+
+            <label for="reasons"> Why do you want to join this club/organization? </label></br/>
+                <textarea id="textArea" name="reasons" rows="5" cols="50"></textarea></br/>
+
+        </fieldset>
+        
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+</body>
+</html>
