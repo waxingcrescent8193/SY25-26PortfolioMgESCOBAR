@@ -1,18 +1,22 @@
 * {
     font-family: 'Verdana', Geneva, Tahoma, sans-serif;
-    background-color: #9efffc;
+    color: #091540;
 }
 
 nav {
-    background-color: #1ee8e2;
+    background-color: #006800;
     overflow:hidden;
     position:sticky;
     top: 0;
 }
 
+body {
+    background-color: #63A088;
+}
+
 h2 {
-    text-align: center;
-    background-color: #1ee8e2;
+    color: #EECF6D;
+    margin-left: 20px;
 }
 
 form {
@@ -20,14 +24,30 @@ form {
 }
 
 fieldset {
-    margin: 50px 0;
+    margin: 50px 30px;
+    border-radius: 12px;
+    background-color: #ABD2FA;
+}
+
+label input, textarea {
+    margin: 5px;
+    border-color: #091540;
+    border-width: 0.5px;
+    background-color: #e9e9e9;
 }
 
 legend {
     font-weight: bold;
     font-size: 1.5em;
+    background-color: #E9D985;
 }
 
-input.active {
-    border-color: red;
+input.emptyContent {
+    border-color: #E94F37;
+    border-width: 2px;
+    background-color: #dc998fdb;
+}
+
+input.inputComplete {
+    background-color: #ffffe0;
 }

@@ -18,12 +18,10 @@ function missingInfo(response) {
 
     if (responseContent == "") {
         alert("This field is required");
-        response.style.borderColor = "red";
-        response.style.backgroundColor = "green";
+        response.classList.add("emptyContent")
     }
 
     else {
-        response.style.backgroundColor = "lightyellow";
-        response.style.borderColor = "blue";
+        response.classList.add("inputComplete")
     }
 }
