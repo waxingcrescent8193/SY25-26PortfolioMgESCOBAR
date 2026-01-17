@@ -16,7 +16,7 @@ form.addEventListener("reset", function(e) {
 function missingInfo(response) {
     let responseContent = response.value;
 
-    if (responseContent == "") {
+    if (responseContent == "" || responseContent == " ") {
         alert("This field is required");
         response.classList.add("emptyContent")
     }

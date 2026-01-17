@@ -42,12 +42,14 @@ legend {
     background-color: #E9D985;
 }
 
-input.emptyContent {
+input.emptyContent, textArea.emptyContent {
     border-color: #E94F37;
     border-width: 2px;
     background-color: #dc998fdb;
 }
 
-input.inputComplete {
+input.inputComplete, textArea.inputComplete {
     background-color: #ffffe0;
+    border-color: #091540;
 }
+

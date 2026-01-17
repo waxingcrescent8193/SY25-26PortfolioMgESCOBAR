@@ -21,7 +21,7 @@
             <legend> Identification: </legend>
 
             <label for="studentid"> StudentID 
-                <input type="number" class="inputType" id="studentid" name="studentid" required> 
+                <input type="number" class="inputType" id="studentid" name="studentid"  onblur="missingInfo(this)" required> 
             </label></br/>
 
             <label for="fullName"> Full Name 
