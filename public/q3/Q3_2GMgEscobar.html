@@ -45,40 +45,44 @@
                 <input type="text" id="phoneNo" name="phoneNo" onblur="missingInfo(this)" required> 
             </label></br/>
 
-            <label for="gradeLevel"> Grade Level </label>
+            <label for="gradeLevel"> Grade Level 
+                <select name="gradeLevel" id="gradeLevel" required>
+                    <option value="7"> Grade 7 </option>
+                    <option value="8"> Grade 8 </option>
+                    <option value="9"> Grade 9 </option>
+                    <option value="10"> Grade 10 </option>
+                    <option value="11"> Grade 11 </option>
+                    <option value="12"> Grade 12 </option>
+                </select>
+            </label></br/>
 
-            <select name="gradeLevel" id="gradeLevel" required>
-                <option value="7"> Grade 7 </option>
-                <option value="8"> Grade 8 </option>
-                <option value="9"> Grade 9 </option>
-                <option value="10"> Grade 10 </option>
-                <option value="11"> Grade 11 </option>
-                <option value="12"> Grade 12 </option>
-            </select></br/>
-
-            <p> Are you an Intern/Extern? </p>
+            <label> Are you an Intern/Extern? </label>
             <input type="radio" id="intern" name="livingArrangements" value="Intern" required>
             <label for="intern"> Intern </label>
             <input type="radio" id="extern" name="livingArrangements" value="Extern" required>
             <label for="extern"> Extern </label></br/>
 
-            <label for="preferredClub"> Preferred Organization/Club </label>
-
-            <select name="preferredClub" id="preferredClub" required>
-                <option value="Munhwa"> Munhwa </option>
-                <option value="Sapienara"> Sapienara </option>
-                <option value="AstroSoc"> AstroSoc </option>
-                <option value="Exposure"> Exposure </option>
-                <option value="PisayXYZ"> PisayXYZ </option>
-            </select></br/>
+            <label for="preferredClub"> Preferred Organization/Club
+                <select name="preferredClub" id="preferredClub" required>
+                    <option value="Munhwa"> Munhwa </option>
+                    <option value="Sapienara"> Sapienara </option>
+                    <option value="AstroSoc"> AstroSoc </option>
+                    <option value="Exposure"> Exposure </option>
+                    <option value="PisayXYZ"> PisayXYZ </option>
+                </select>
+            </label></br/>
 
             <label for="reasons"> Why do you want to join this club/organization? </label></br/>
                 <textarea id="textArea" name="reasons" rows="5" cols="50" onblur="missingInfo(this)" required></textarea></br/>
 
         </fieldset>
         
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
+        <fieldset form="buttons" id="buttonField">
+            <legend> Action Buttons </legend>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </fieldset>
 
     </form>
 

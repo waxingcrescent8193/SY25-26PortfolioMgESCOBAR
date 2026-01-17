@@ -4,10 +4,11 @@
 }
 
 nav {
-    background-color: #006800;
+    background-color: #364e40; 
     overflow:hidden;
     position:sticky;
     top: 0;
+    margin: 0;
 }
 
 body {
@@ -15,7 +16,7 @@ body {
 }
 
 h2 {
-    color: #EECF6D;
+    color: #d6eeffd7;
     margin-left: 20px;
 }
 
@@ -29,6 +30,12 @@ fieldset {
     background-color: #ABD2FA;
 }
 
+legend {
+    font-weight: bold;
+    font-size: 1.5em;
+    background-color: #E9D985;
+}
+
 label input, textarea {
     margin: 5px;
     border-color: #091540;
@@ -36,10 +43,8 @@ label input, textarea {
     background-color: #e9e9e9;
 }
 
-legend {
-    font-weight: bold;
-    font-size: 1.5em;
-    background-color: #E9D985;
+select, label {
+    margin: 10px;
 }
 
 input.emptyContent, textArea.emptyContent {
@@ -53,3 +58,16 @@ input.inputComplete, textArea.inputComplete {
     border-color: #091540;
 }
 
+#buttonField input {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    border-style: none;
+    background-color: #C880B7;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+#buttonField input:hover {
+    background-color: #c7a0f9;
+}
