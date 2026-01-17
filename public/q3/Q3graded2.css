@@ -63,6 +63,10 @@ input.focusedOn, textArea.focusedOn {
     font-weight: bold;
 }
 
+select:focus {
+    background-color: #ffffe0;
+}
+
 #buttonField input {
     width: 100px;
     height: 50px;
