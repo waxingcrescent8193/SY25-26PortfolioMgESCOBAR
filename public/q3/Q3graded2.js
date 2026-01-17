@@ -1,0 +1,29 @@
+const form = document.getElementById("submission");
+
+form.addEventListener("submit", submission());
+
+function submission() {
+    confirm("Would you like to save your response?");
+
+}
+
+form.addEventListener("reset", function(e) {
+    if(!confirm("Would you like to clear your response?")) {
+        e.preventDefault(); 
+    }
+});
+
+function missingInfo(response) {
+    let responseContent = response.value;
+
+    if (responseContent == "") {
+        alert("This field is required");
+        response.style.borderColor = "red";
+        response.style.backgroundColor = "green";
+    }
+
+    else {
+        response.style.backgroundColor = "lightyellow";
+        response.style.borderColor = "blue";
+    }
+}

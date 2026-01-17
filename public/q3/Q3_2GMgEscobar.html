@@ -8,64 +8,33 @@
     <meta name="author" content="Joanna Escobar">
 
     <title>Club Applications Form</title>
+    <link rel="stylesheet" href="Q3graded2.css"/>
 
-    <style>
-        * {
-            font-family: 'Verdana', Geneva, Tahoma, sans-serif;
-            background-color: #9efffc;
-        }
-
-        nav {
-            background-color: #1ee8e2;
-            overflow:hidden;
-            position:sticky;
-            top: 0;
-        }
-
-        h2 {
-            text-align: center;
-            background-color: #1ee8e2;
-        }
-
-        form {
-            padding: 0 10px;
-        }
-
-        fieldset {
-            margin: 50px 0;
-        }
-
-        legend {
-            font-weight: bold;
-            font-size: 1.5em;
-        }
-
-    </style>
 </head>
 <body>
     <nav>
         <h2> Club Applications </h2>
      </nav>
 
-    <form method="post" action="submit">
+    <form id="submission" method="post" action="submit" onsubmit="return submission()">
         <fieldset form="identification">
             <legend> Identification: </legend>
 
             <label for="studentid"> StudentID 
-                <input type="number" id="studentid" name="studentid"> 
+                <input type="number" class="inputType" id="studentid" name="studentid" required> 
             </label></br/>
 
             <label for="fullName"> Full Name 
-                <input type="text" id="fullName" name="fullName"> 
+                <input type="text" id="fullName" name="fullName" onblur="missingInfo(this)" required> 
             </label></br/>
 
             <label for="bday"> Birthday 
-                <input type="date" id="bday" name="bday"> 
+                <input type="date" id="bday" name="bday" onblur="missingInfo(this)" required> 
             </label></br/>
 
 
             <label for="emailAddress"> Email address 
-                <input type="email" id="emailAddress" name="emailAddress"> 
+                <input type="email" id="emailAddress" name="emailAddress" onblur="missingInfo(this)" required> 
             </label></br/>
         </fieldset>
 
@@ -73,12 +42,12 @@
             <legend> Student Information: </legend>
 
             <label for="phoneNo"> Mobile phone 
-                <input type="text" id="phoneNo" name="phoneNo"> 
+                <input type="text" id="phoneNo" name="phoneNo" onblur="missingInfo(this)" required> 
             </label></br/>
 
             <label for="gradeLevel"> Grade Level </label>
 
-            <select name="gradeLevel" id="gradeLevel">
+            <select name="gradeLevel" id="gradeLevel" required>
                 <option value="7"> Grade 7 </option>
                 <option value="8"> Grade 8 </option>
                 <option value="9"> Grade 9 </option>
@@ -88,14 +57,14 @@
             </select></br/>
 
             <p> Are you an Intern/Extern? </p>
-            <input type="radio" id="intern" name="livingArrangements" value="Intern">
+            <input type="radio" id="intern" name="livingArrangements" value="Intern" required>
             <label for="intern"> Intern </label>
-            <input type="radio" id="extern" name="livingArrangements" value="Extern">
+            <input type="radio" id="extern" name="livingArrangements" value="Extern" required>
             <label for="extern"> Extern </label></br/>
 
             <label for="preferredClub"> Preferred Organization/Club </label>
 
-            <select name="preferredClub" id="preferredClub">
+            <select name="preferredClub" id="preferredClub" required>
                 <option value="Munhwa"> Munhwa </option>
                 <option value="Sapienara"> Sapienara </option>
                 <option value="AstroSoc"> AstroSoc </option>
@@ -104,7 +73,7 @@
             </select></br/>
 
             <label for="reasons"> Why do you want to join this club/organization? </label></br/>
-                <textarea id="textArea" name="reasons" rows="5" cols="50"></textarea></br/>
+                <textarea id="textArea" name="reasons" rows="5" cols="50" onblur="missingInfo(this)" required></textarea></br/>
 
         </fieldset>
         
@@ -112,5 +81,7 @@
         <input type="reset" value="Reset">
 
     </form>
+
+    <script src="Q3graded2.js"></script>
 </body>
 </html>
