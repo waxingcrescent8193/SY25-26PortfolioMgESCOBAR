@@ -4,7 +4,6 @@ form.addEventListener("submit", submission());
 
 function submission() {
     confirm("Would you like to save your response?");
-
 }
 
 form.addEventListener("reset", function(e) {
@@ -13,8 +12,14 @@ form.addEventListener("reset", function(e) {
     }
 });
 
+function focusedInput(element) {
+    element.classList.add("focusedOn")
+}
+
 function missingInfo(response) {
     let responseContent = response.value;
+
+    response.classList.remove("focusedOn");
 
     if (responseContent == "" || responseContent == " ") {
         alert("This field is required");
@@ -25,3 +30,4 @@ function missingInfo(response) {
         response.classList.add("inputComplete")
     }
 }
+

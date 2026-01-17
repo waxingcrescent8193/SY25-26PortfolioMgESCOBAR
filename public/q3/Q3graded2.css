@@ -58,6 +58,11 @@ input.inputComplete, textArea.inputComplete {
     border-color: #091540;
 }
 
+input.focusedOn, textArea.focusedOn {
+    background-color: #ffffe0;
+    font-weight: bold;
+}
+
 #buttonField input {
     width: 100px;
     height: 50px;

@@ -25,16 +25,16 @@
             </label></br/>
 
             <label for="fullName"> Full Name 
-                <input type="text" id="fullName" name="fullName" onblur="missingInfo(this)" required> 
+                <input type="text" id="fullName" name="fullName" onfocus="focusedInput(this)" onblur="missingInfo(this)" required> 
             </label></br/>
 
             <label for="bday"> Birthday 
-                <input type="date" id="bday" name="bday" onblur="missingInfo(this)" required> 
+                <input type="date" id="bday" name="bday" onfocus="focusedInput(this)" onblur="missingInfo(this)" required> 
             </label></br/>
 
 
             <label for="emailAddress"> Email address 
-                <input type="email" id="emailAddress" name="emailAddress" onblur="missingInfo(this)" required> 
+                <input type="email" id="emailAddress" name="emailAddress" onfocus="focusedInput(this)" onblur="missingInfo(this)" required> 
             </label></br/>
         </fieldset>
 
@@ -42,7 +42,7 @@
             <legend> Student Information: </legend>
 
             <label for="phoneNo"> Mobile phone 
-                <input type="text" id="phoneNo" name="phoneNo" onblur="missingInfo(this)" required> 
+                <input type="text" id="phoneNo" name="phoneNo" onfocus="focusedInput(this)" onblur="missingInfo(this)" required> 
             </label></br/>
 
             <label for="gradeLevel"> Grade Level 
@@ -73,7 +73,7 @@
             </label></br/>
 
             <label for="reasons"> Why do you want to join this club/organization? </label></br/>
-                <textarea id="textArea" name="reasons" rows="5" cols="50" onblur="missingInfo(this)" required></textarea></br/>
+                <textarea id="textArea" name="reasons" rows="5" cols="50" onfocus="focusedInput(this)" onblur="missingInfo(this)" required></textarea></br/>
 
         </fieldset>
         
