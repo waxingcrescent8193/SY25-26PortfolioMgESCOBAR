@@ -1,10 +1,35 @@
 const form = document.getElementById("submission");
 
-form.addEventListener("submit", submission());
+let submittedInfo = localStorage.getItem("userInfo");
+let details;
 
-function submission() {
-    confirm("Would you like to save your response?");
+if (submittedInfo) {
+    details = JSON.parse(signups);
 }
+
+else {
+    details = {};
+}
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    if(confirm("Would you like to save your response?")) {
+        const accountDetails = new FormData(form);
+        const studentDetails = Object.fromEntries(accountDetails.entries());
+
+        details[studentDetails.fullName] = {};
+
+        for (let key in studentDetails) {
+            if (key != "fullName")
+                details[studentDetails.fullName][key] = studentDetails[key];
+        }
+    }
+
+    console.log(studentDetails);
+    localStorage.setItem("userInfo", JSON.stringify(details));
+    form.submit();
+});
 
 form.addEventListener("reset", function(e) {
     if(!confirm("Would you like to clear your response?")) {
@@ -30,4 +55,3 @@ function missingInfo(response) {
         response.classList.add("inputComplete")
     }
 }
-

@@ -67,7 +67,7 @@ select:focus {
     background-color: #ffffe0;
 }
 
-#buttonField input {
+#buttonField input, button {
     width: 100px;
     height: 50px;
     font-size: 20px;
@@ -77,6 +77,10 @@ select:focus {
     margin: 10px;
 }
 
-#buttonField input:hover {
+#buttonField input:hover, button:hover {
     background-color: #c7a0f9;
+}
+
+a {
+    text-decoration: none;
 }
