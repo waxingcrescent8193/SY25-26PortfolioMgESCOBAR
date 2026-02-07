@@ -13,10 +13,15 @@
 </head>
 <body>
     <nav>
-        <h2> Clubs Sign Up Form </h2>
+        <h2> Clubs Sign Up </h2>
+
+        <div class="nav-button-containers">
+            <button onclick="window.location.href='./Q3_2GMgEscobar.html'"> Sign Up Form </button>
+            <button onclick="window.location.href='./viewSignUps.html'"> View Sign Ups </button>
+        </div>
      </nav>
 
-    <form id="submission" method="post" action="submit">
+    <form id="submission" method="post">
         <fieldset form="identification">
             <legend> Identification: </legend>
 
@@ -107,7 +112,7 @@
             </label></br/>
 
             <label for="reasons"> Why do you want to join this club? </label></br/>
-                <textarea id="textArea" name="reasons" rows="5" cols="50" onfocus="focusedInput(this)" onblur="missingInfo(this)" required></textarea></br/>
+                <textarea id="reasons" name="reasons" rows="5" cols="50" onfocus="focusedInput(this)" onblur="missingInfo(this)" required></textarea></br/>
 
         </fieldset>
         

@@ -7,16 +7,30 @@
 
     <link rel="stylesheet" href="Q3graded2.css">
 
+    <style>
+        section {
+            padding: 0 10px;
+        }
+    </style>
+
 </head>
 <body>
     <nav>
-        <h2> Clubs Sign Up Form </h2>
-    </nav>
+        <h2> Clubs Sign Up </h2>
+
+        <div class="nav-button-containers">
+            <button onclick="window.location.href='./Q3_2GMgEscobar.html'"> Sign Up Form </button>
+            <button onclick="window.location.href='./viewSignUps.html'"> View Sign Ups </button>
+        </div>
+     </nav>
 
     <section>
+        <p style="padding: 0 10px;"> Total Sign Ups: <span id="signUpOutput"></span> </p>
+
         <label for="clubPicked"> Preferred Club
-            <select name="clubPicked" id="clubPicked" required>
-                <option value="allListed"> --select club-- </option>
+            <select name="clubPicked" id="clubPicked" oninput="generateOutput()" required>
+                <option value="default"> --select club-- </option>
+                <option value="allListed"> All </option>
                 <option value="ACTS"> ACTS </option>
                 <option value="Aksis"> Aksis </option>
                 <option value="Alianti"> Alianti </option>
@@ -58,11 +72,12 @@
                 <option value="YVS"> Youth Venture Society </option>
             </select>
         </label></br/>
+
     </section>
 
-    <section id="signUpsList"> 
+    <table id="signUpsList"> 
         
-    </section>
+    </table>
 
     <script src="Q3graded3.js"></script>
 </body>

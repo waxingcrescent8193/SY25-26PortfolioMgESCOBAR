@@ -9,6 +9,25 @@ nav {
     position:sticky;
     top: 0;
     margin: 0;
+    display: flex;
+}
+
+.nav-button-containers {
+    margin-left: auto;
+}
+
+.nav-button-containers button {
+    font-size: 15px;
+    background: none;
+    color: #e6fdaad7;
+    border-radius: 0;
+    margin: 0;
+    height: 100%;
+    width: 150px;
+}
+
+.nav-button-containers button:hover {
+    background-color: #133325; 
 }
 
 body {
@@ -83,4 +102,19 @@ select:focus {
 
 a {
     text-decoration: none;
+}
+
+table {
+    background-color: #c0b991;
+}
+
+table, td, tr, th {
+    margin: 0 auto;
+    border: 2px solid rgb(255, 217, 192);
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+    width: 200px;
 }
