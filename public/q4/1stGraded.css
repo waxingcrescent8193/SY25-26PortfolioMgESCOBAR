@@ -1,0 +1,47 @@
+div {
+  background-color: #8aedfc;
+  padding: 25px;
+  border-radius: 20px;
+  width: 40%;
+  height: 100%;
+  margin: 20px auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+form label input {
+  width: 100%;
+  margin: 20px auto;
+}
+
+label {
+  margin: 20px auto;
+}
+
+.stars {
+  margin: 0 auto;
+  gap: 2px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  color: #808080;
+}
+
+.stars input {
+  display: none;
+}
+
+.stars label {
+  font-size: 2.5em;  
+}
+
+.stars label:hover {
+  color: #d6d25d;
+}
+
+.stars:hover ~ label, .stars input:checked ~ label {
+  color: #ffff00;
+  transform: scale(1.1);
+}
