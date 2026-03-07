@@ -1,32 +1,53 @@
-div {
-  background-color: #8aedfc;
-  padding: 25px;
-  border-radius: 20px;
+:root {
+  color-scheme: light dark;
+  --background: light-dark(#8aedfc, #3C1642);
+  --text: light-dark(#17301C, #DDFFD9);
+  --buttonbg: light-dark(#083D77, #CC76A1);
+  --buttontext: light-dark(#D3C0CD, #7c1900);
+}
+
+body {
+  color: var(--text);
+}
+
+.main {
+  background-color: var(--background);
   width: 40%;
   height: 100%;
-  margin: 20px auto;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 10px;
 }
 
 h2 {
   text-align: center;
 }
 
-form label input {
+label input {
   width: 100%;
-  margin: 20px auto;
+  margin: 7px;
+  position: relative;
+  margin-left: -2px;
+  margin-bottom: 20px;
 }
 
-label {
-  margin: 20px auto;
+.selection {
+  margin: 10px 0;
+  display: block;
+}
+
+label.rating {
+  margin: 20px 0;
 }
 
 .stars {
-  margin: 0 auto;
+  padding: 2px;
   gap: 2px;
   display: flex;
   flex-direction: row-reverse;
-  justify-content: center;
+  justify-content: left;
   color: #808080;
+  left: 0;
 }
 
 .stars input {
@@ -34,7 +55,7 @@ label {
 }
 
 .stars label {
-  font-size: 2.5em;  
+  font-size: 1.5em;  
 }
 
 .stars label:hover {
@@ -44,4 +65,27 @@ label {
 .stars:hover ~ label, .stars input:checked ~ label {
   color: #ffff00;
   transform: scale(1.1);
+}
+
+#submitButton {
+  width: 100%;
+  height: 2.5em;
+  border: none;
+  margin-top: 30px;
+  border-radius: 5px;
+  background-color: var(--buttonbg);
+  color: var(--buttontext);
+}
+
+input {
+  color: var(--text);
+}
+
+.focus {
+  background-color: light-dark(#FFB7C3, #347FC4);
+}
+
+select:focus {
+  background-color: light-dark(#F4D35E, #6485a4);
+  color: var(--text);
 }

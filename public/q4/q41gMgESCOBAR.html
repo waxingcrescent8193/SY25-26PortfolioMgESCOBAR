@@ -10,20 +10,20 @@
 </head>
 
 <body>
-    <div>
-        <form>
+    <div class="main">
+        <form id="rateMovies">
             <h2> Add a Movie </h2>
 
             <label> Title:</br/>
-                <input type="text" id="title" name="title"></br/>
+                <input type="text" id="title" name="title" onfocus="focused(this)" onblur="unfocused(this)"></br/>
             </label>
 
             <label> Year: </br/>
-                <input type="text" id="year" name="year"></br/>
+                <input type="text" id="year" name="year" onfocus="focused(this)" onblur="unfocused(this)"></br/>
             </label>
 
-            <label class="selection"> Genre
-            <select>
+            <label class="selection" onfocus="focused(this)"> Genre
+            <select id="genre">
                 <option value="Action"> Action </option> 
                 <option value="Adventure"> Adventure </option>
                 <option value="Animation"> Animation </option>
@@ -39,21 +39,19 @@
                 <option value="Thriller"> Thriller </option>
             </select></label></br/>
 
-            <label>
-                Rating:
+            <label> Rating: 
+                <div class="rating">
+                    <div class="stars"> <!-- reverse order-->
+                        <input type="radio" id="s5" name="rating" value="5" /><label for="s5" title="5 Stars">&#9733;</label>
+                        <input type="radio" id="s4" name="rating" value="4" /><label for="s4" title="4 Stars">&#9733;</label>
+                        <input type="radio" id="s3" name="rating" value="3" /><label for="s3" title="3 Stars">&#9733;</label>
+                        <input type="radio" id="s2" name="rating" value="2" /><label for="s2" title="2 Stars">&#9733;</label>
+                        <input type="radio" id="s1" name="rating" value="1" /><label for="s1" title="1 Star">&#9733;</label>
+                    </div>
+                </div>
             </label>
 
-            <div class="rating">
-                <div class="stars"> <!-- reverse order-->
-                    <input type="radio" id="s5" name="rating" value="5" /><label for="s5" title="5 Stars">&#9733;</label>
-                    <input type="radio" id="s4" name="rating" value="4" /><label for="s4" title="4 Stars">&#9733;</label>
-                    <input type="radio" id="s3" name="rating" value="3" /><label for="s3" title="3 Stars">&#9733;</label>
-                    <input type="radio" id="s2" name="rating" value="2" /><label for="s2" title="2 Stars">&#9733;</label>
-                    <input type="radio" id="s1" name="rating" value="1" /><label for="s1" title="1 Star">&#9733;</label>
-                </div>
-            </div>
-
-            <input type="submit" value="Add Movie">
+            <input type="submit" value="Add Movie" id="submitButton">
         </form> 
 
         <hr width="100%" size="1"> 
@@ -64,5 +62,7 @@
             <span id="submittedMovies"></span>
         </section>
     </div>
+
+    <script src="1stGraded.js"></script>
 </body>
 </html>
