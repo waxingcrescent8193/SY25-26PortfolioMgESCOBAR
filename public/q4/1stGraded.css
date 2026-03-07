@@ -4,6 +4,7 @@
   --text: light-dark(#17301C, #DDFFD9);
   --buttonbg: light-dark(#083D77, #CC76A1);
   --buttontext: light-dark(#D3C0CD, #7c1900);
+  --lighterBackground: light-dark(#bff7ff, #32003a);
 }
 
 body {
@@ -21,6 +22,10 @@ body {
 
 h2 {
   text-align: center;
+}
+
+label {
+  font-weight: bold;
 }
 
 label input {
@@ -77,6 +82,10 @@ label.rating {
   color: var(--buttontext);
 }
 
+#submitButton:hover {
+  background-color: light-dark(#033163, #bf5e8e);
+}
+
 input {
   color: var(--text);
 }
@@ -88,4 +97,20 @@ input {
 select:focus {
   background-color: light-dark(#F4D35E, #6485a4);
   color: var(--text);
+}
+
+.movieDisplay {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--lighterBackground);
+  margin: 10px 0;
+  padding: 0 10px;
+  border-radius: 10px;
+  height: 50px;
+}
+
+.ratingStars {
+  font-size: 1.5em;
+  color: yellow;
 }

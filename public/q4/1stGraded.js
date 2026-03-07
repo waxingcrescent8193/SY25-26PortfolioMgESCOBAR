@@ -38,6 +38,8 @@ form.addEventListener("submit", function(e){
 
         //console log confirmation
         console.log("Rating submitted");
+
+        displayMovies(movieRated)
     }
 })
 
@@ -47,4 +49,29 @@ function focused(element) {
 
 function unfocused (element) {
     element.classList.remove("focus");
+}
+
+function displayMovies(details) {
+    let movieDisplay = document.createElement("div");
+    let display = document.createElement("p");
+    let ratingDisplay = document.createElement("div");
+    let ratingString = document.createElement("p");
+    let star = "&#9733;";
+
+    movieDisplay.classList.add("movieDisplay");
+
+    for(let i=0; i < details.rating; i++) {
+        ratingString.innerHTML += star;
+    }
+
+    ratingDisplay.appendChild(ratingString);
+
+    ratingString.classList.add("ratingStars");
+
+    display.innerHTML = `${details.title} (${details.yearReleased}) - ${details.genre}, Rating: `;
+
+    movieDisplay.appendChild(display);
+    movieDisplay.appendChild(ratingDisplay);
+
+    document.getElementById("submittedMovies").appendChild(movieDisplay);
 }
