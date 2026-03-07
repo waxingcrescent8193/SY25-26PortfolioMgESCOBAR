@@ -39,7 +39,7 @@ form.addEventListener("submit", function(e){
         //console log confirmation
         console.log("Rating submitted");
 
-        displayMovies(movieRated)
+        displayMovies(listOfMovies);
     }
 })
 
@@ -51,27 +51,29 @@ function unfocused (element) {
     element.classList.remove("focus");
 }
 
-function displayMovies(details) {
-    let movieDisplay = document.createElement("div");
-    let display = document.createElement("p");
-    let ratingDisplay = document.createElement("div");
-    let ratingString = document.createElement("p");
-    let star = "&#9733;";
+function displayMovies(movies) {
+    for(let i in movies) {
+        let movieDisplay = document.createElement("div");
+        let display = document.createElement("p");
+        let ratingDisplay = document.createElement("div");
+        let ratingString = document.createElement("p");
+        let star = "&#9733;";
 
-    movieDisplay.classList.add("movieDisplay");
+        movieDisplay.classList.add("movieDisplay");
 
-    for(let i=0; i < details.rating; i++) {
-        ratingString.innerHTML += star;
+        for(let j=0; j < movies[i].rating; j++) {
+            ratingString.innerHTML += star;
+        }
+
+        ratingDisplay.appendChild(ratingString);
+
+        ratingString.classList.add("ratingStars");
+
+        display.innerHTML = `${movies[i].title} (${movies[i].yearReleased}) - ${movies[i].genre}, Rating: `;
+
+        movieDisplay.appendChild(display);
+        movieDisplay.appendChild(ratingDisplay);
+
+        document.getElementById("submittedMovies").appendChild(movieDisplay);
     }
-
-    ratingDisplay.appendChild(ratingString);
-
-    ratingString.classList.add("ratingStars");
-
-    display.innerHTML = `${details.title} (${details.yearReleased}) - ${details.genre}, Rating: `;
-
-    movieDisplay.appendChild(display);
-    movieDisplay.appendChild(ratingDisplay);
-
-    document.getElementById("submittedMovies").appendChild(movieDisplay);
 }

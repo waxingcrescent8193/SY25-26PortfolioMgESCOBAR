@@ -75,17 +75,18 @@
 
       div#buttonNavBar button {
         background-color: #bfbc85;
-        border-radius: 0;
+        border-radius: 10px;
         margin: 0;
-        border: none;
+        width: 40px;
+        border-color: #908900;
+      }
+
+      div#buttonNavBar button:hover {
+        background-color: #cbca66;
       }
 
       div#buttonNavBar button.active {
-        background-color: #fffa9b
-      }
-
-      div#buttonNavBar button a {
-        background-color: #bfbc85;
+        background-color: #d4d93f;
       }
 
       a:visited {
@@ -97,19 +98,11 @@
         text-decoration-line: underline;
       }
 
-      #q2Graded, #q2Nongraded {
+      #q2Graded, #q2Nongraded, #q3Graded, #q3Nongraded , #q4Graded, #q4Nongraded {
         display: none;
       }
 
-      #q2Graded.active, #q2Nongraded.active {
-        display: block;
-      }
-
-      #q3Graded, #q3Nongraded {
-        display: none;
-      }
-
-      #q3Graded.active, #q3Nongraded.active {
+      #q2Graded.active, #q2Nongraded.active, #q3Graded.active, #q3Nongraded.active, #q4Graded.active, #q4Nongraded.active {
         display: block;
       }
     </style>
@@ -130,10 +123,10 @@
 
       <div id="buttonNavBar">
         <ul>
-          <button> <a href="https://waxingcrescent8193.github.io/CS3_1stQtrPortfolio_MagnesiumESCOBAR/"> Q1 </a> </button>
+          <button onclick='window.location.href = "https://waxingcrescent8193.github.io/CS3_1stQtrPortfolio_MagnesiumESCOBAR/"'> Q1 </button>
           <button id="q2Button" onclick="q2()"> Q2 </button>
           <button id="q3Button" onclick="q3()"> Q3 </button>
-          <button id="q4Button" onclick="q4()"> Q4 </button>
+          <button class="active" id="q4Button" onclick="q4()"> Q4 </button>
         </ul>
       </div>
 
@@ -145,8 +138,12 @@
         <button onclick="window.location.href='./public/q2/Q23GMgEscobar.html'"><li><a class="information" href="./public/q2/Q23GMgEscobar.html"> Third Graded </a></li></button>
       </ul>
 
-      <ul id="q3Graded" class="active">
+      <ul id="q3Graded">
         <button onclick="window.location.href='./public/q3/Q3_2GMgEscobar.html'"><li><a class="information" href="./public/q3/Q3_2GMgEscobar.html"> Second Graded </a></li></button>
+      </ul>
+
+      <ul class="active" id="q4Graded">
+        <button onclick="window.location.href='./public/q4/q41gMgESCOBAR.html'"><a class="information" href="./public/q4/q41gMgESCOBAR.html"></a> First Graded </button>
       </ul>
 
       <hr width="100%" size="1">
@@ -157,9 +154,13 @@
         <button onclick="window.location.href='./public/q2/Q21NGMgEscobar.html'"><li><a href="./public/q2/Q21NGMgEscobar.html"> First Nongraded </a></li></button>
       </ul>
 
-      <ul id="q3Nongraded" class="active">
+      <ul id="q3Nongraded">
         <button onclick="window.location.href='../public/q3/Q31NGMgEscobar.html'"><li><a href="./public/q3/Q31NGMgEscobar.html"> First Nongraded </a></li></button>
         <button onclick="window.location.href='../public/q3/Q31NGMgEscobar.html'"><li><a href="./public/q3/Q32NGMgEscobar.html"> Second Nongraded </a></li></button>
+      </ul>
+
+      <ul class="active" id="q4Nongraded">
+
       </ul>
 
       <hr width="100%" size="1">
@@ -187,6 +188,9 @@
     let q3Button = document.getElementById("q3Button");
     let q3Graded = document.getElementById("q3Graded");
     let q3Nongraded = document.getElementById("q3Nongraded");
+    let q4Button = document.getElementById("q4Button");
+    let q4Graded = document.getElementById("q4Graded");
+    let q4Nongraded = document.getElementById("q4Nongraded");
 
     function q2() {
       q2Button.classList.add("active");
@@ -195,13 +199,30 @@
       q3Button.classList.remove("active");
       q3Graded.classList.remove("active");
       q3Nongraded.classList.remove("active");
-
+      q4Button.classList.remove("active");
+      q4Graded.classList.remove("active");
+      q4Nongraded.classList.remove("active");
     }
 
     function q3() {
       q3Button.classList.add("active");
       q3Graded.classList.add("active");
       q3Nongraded.classList.add("active");
+      q2Button.classList.remove("active");
+      q2Graded.classList.remove("active");
+      q2Nongraded.classList.remove("active");
+      q4Button.classList.remove("active");
+      q4Graded.classList.remove("active");
+      q4Nongraded.classList.remove("active");
+    }
+
+    function q4() {
+      q4Button.classList.add("active");
+      q4Graded.classList.add("active");
+      q4Nongraded.classList.add("active");
+      q3Button.classList.remove("active");
+      q3Graded.classList.remove("active");
+      q3Nongraded.classList.remove("active");
       q2Button.classList.remove("active");
       q2Graded.classList.remove("active");
       q2Nongraded.classList.remove("active");
