@@ -14,6 +14,7 @@ form.addEventListener("submit", function(e){
 
         let ratingSelection = document.getElementsByName("rating");
         let rating;
+        let tracker = false;
 
         for (let i in ratingSelection) {
             if(ratingSelection[i].checked) {
@@ -25,13 +26,31 @@ form.addEventListener("submit", function(e){
             title: movieTitle,
             yearReleased: yearOfRelease,
             genre: genre,
-            rating: rating
+            rating: [rating]
         };
 
         console.log(movieRated);
 
-        //push to local storage array
-        listOfMovies.push(movieRated);
+
+        //START OF IN PROGRESS
+        //counterchecking if movieRated is alr in local storage and then just update
+
+        for (let i in listOfMovies) {
+            if(listOfMovies[i].title == movieRated.title) {
+                tracker = true;
+
+                if(listOfMovies[i].genre != movieRated.genre)
+                    listOfMovies[i].genre += ", " + movieRated.genre; 
+
+                // ratings
+
+            }
+        }
+
+        if(!tracker)
+            listOfMovies.push(movieRated);
+    
+        //END OF IN PROGRESS
 
         //set local storage array to local storage
         localStorage.setItem("ratedMovies", JSON.stringify(listOfMovies));
