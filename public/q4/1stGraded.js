@@ -1,7 +1,6 @@
 const form = document.getElementById("rateMovies");
 
 let savedMovies = localStorage.getItem("ratedMovies");
-
 let listOfMovies = (savedMovies) ? JSON.parse(savedMovies) : [];
 
 form.addEventListener("submit", function(e){
@@ -31,10 +30,7 @@ form.addEventListener("submit", function(e){
 
         console.log(movieRated);
 
-
-        //START OF IN PROGRESS
-        //counterchecking if movieRated is alr in local storage and then just update
-
+        //update existing object for a movie title if it has already been recorded before
         for (let i in listOfMovies) {
             if(listOfMovies[i].title == movieRated.title && listOfMovies[i].yearReleased == movieRated.yearReleased) {
                 tracker = true;
@@ -46,19 +42,17 @@ form.addEventListener("submit", function(e){
                 }
                 
                 if(!genreTrack)
-                    listOfMovies[i].genre.push(genre);
+                    listOfMovies[i].genre.push(genre); //add new genre
                 
                 listOfMovies[i].rating.push(rating);
 
             }
         }
         
-
+        //add movie if it has not been saved before
         if(!tracker)
             listOfMovies.push(movieRated);
     
-        //END OF IN PROGRESS
-
         //set local storage array to local storage
         localStorage.setItem("ratedMovies", JSON.stringify(listOfMovies));
 
@@ -78,27 +72,33 @@ function unfocused (element) {
 }
 
 function displayMovies(movies) {
-    submittedMovies.innerHTHML = "";
+    submittedMovies.innerHTML = "";
+
+    console.log(submittedMovies);
     
     for(let i in movies) {
+        //creating the html elements to display the information needed for each movie
         let movieDisplay = document.createElement("div");
         let display = document.createElement("p");
         let ratingDisplay = document.createElement("div");
         let ratingString = document.createElement("p");
+        let deleteButton = document.createElement("button");
         let star = "&#9733;";
 
         let aveRating = 0;
-        let genreString = "";
+        let genreString = movies[i].genre.join(", ");
 
         movieDisplay.classList.add("movieDisplay");
+        movieDisplay.dataset.title = movies[i].title;
 
+        //calculating and displaying average rating
         for(let k=0; k < movies[i].rating.length; k++) {
             aveRating += parseInt(movies[i].rating[k]);
         }
 
         aveRating /= (movies[i].rating.length);
 
-        console.log(aveRating);
+        console.log(`Average Rating: ${aveRating}`);
 
         aveRating = Math.ceil(aveRating);
 
@@ -106,20 +106,42 @@ function displayMovies(movies) {
             ratingString.innerHTML += star;
         }
 
-        //genre string
-        for(let m in movies[i].genre) {
-            genreString += movies[i].genre[m] + ", "
-        }
-
         ratingDisplay.appendChild(ratingString);
 
         ratingString.classList.add("ratingStars");
 
-        display.innerHTML = `${movies[i].title} (${movies[i].yearReleased}) - ${genreString} Rating: `;
+        deleteButton.textContent = "Remove";
+
+        deleteButton.addEventListener("click", function() {
+            deleteMovie(this, listOfMovies);
+        }) 
+
+        deleteButton.classList.add("deleteButton");
+        deleteButton.dataset.title = movies[i].title; //saves title to be used in other functions
+
+        display.innerHTML = `${movies[i].title} (${movies[i].yearReleased}) - ${genreString}, Rating: `;
 
         movieDisplay.appendChild(display);
         movieDisplay.appendChild(ratingDisplay);
+        movieDisplay.appendChild(deleteButton);
 
-        document.getElementById("submittedMovies").appendChild(movieDisplay);
+        submittedMovies.appendChild(movieDisplay);
     }
+}
+
+function deleteMovie(element, listOfMovies) {
+
+    let movieTitle = element.dataset.title;
+
+    function filterMovies(movies) {
+        return movies.title != movieTitle;
+    }
+
+    element.parentElement.remove(); //remove from display
+
+    listOfmovies = listOfMovies.filter(filterMovies); //remove deleted movie from local storage array
+    console.log(listOfMovies);
+
+    localStorage.setItem("ratedMovies", JSON.stringify(listOfMovies));
+    console.log(`Deleted ${movieTitle} from local storage`);
 }

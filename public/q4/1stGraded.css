@@ -114,3 +114,16 @@ select:focus {
   font-size: 1.5em;
   color: yellow;
 }
+
+.deleteButton {
+  border: none;
+  background: none;
+  margin-left: auto;
+  font-style: italic;
+  color: grey;
+}
+
+.deleteButton:hover {
+    text-decoration: underline;
+    color: light-dark(#135e22, #54e044);
+}
