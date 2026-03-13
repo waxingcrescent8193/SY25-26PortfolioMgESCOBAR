@@ -15,7 +15,7 @@ form.addEventListener("submit", function(e){
         let rating;
         let tracker = false;
 
-        for (let i in ratingSelection) {
+        for (let i=0; i < ratingSelection.length; i++) {
             if(ratingSelection[i].checked) {
                 rating = ratingSelection[i].value;
             }
@@ -37,18 +37,18 @@ form.addEventListener("submit", function(e){
                 let genreTrack = false;
 
                 for(let k in listOfMovies[i].genre) {
-                    if(listOfMovies[i].genre[k] == movieRated.genre)
+                    if(listOfMovies[i].genre[k] == genre)
                         genreTrack = true;
                 }
-                
+                    
                 if(!genreTrack)
                     listOfMovies[i].genre.push(genre); //add new genre
-                
+                    
                 listOfMovies[i].rating.push(rating);
 
             }
-        }
-        
+        } 
+               
         //add movie if it has not been saved before
         if(!tracker)
             listOfMovies.push(movieRated);
@@ -139,7 +139,7 @@ function deleteMovie(element, listOfMovies) {
 
     element.parentElement.remove(); //remove from display
 
-    listOfmovies = listOfMovies.filter(filterMovies); //remove deleted movie from local storage array
+    listOfMovies = listOfMovies.filter(filterMovies); //remove deleted movie from local storage array
     console.log(listOfMovies);
 
     localStorage.setItem("ratedMovies", JSON.stringify(listOfMovies));
