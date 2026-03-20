@@ -131,17 +131,19 @@ function displayMovies(movies) {
 
 function deleteMovie(element, listOfMovies) {
 
-    let movieTitle = element.dataset.title;
+    if(confirm("Delete movie?")) {
+        let movieTitle = element.dataset.title;
 
-    function filterMovies(movies) {
-        return movies.title != movieTitle;
+        function filterMovies(movies) {
+            return movies.title != movieTitle;
+        }
+
+        element.parentElement.remove(); //remove from display
+
+        listOfMovies = listOfMovies.filter(filterMovies); //remove deleted movie from local storage array
+        console.log(listOfMovies);
+
+        localStorage.setItem("ratedMovies", JSON.stringify(listOfMovies));
+        console.log(`Deleted ${movieTitle} from local storage`);
     }
-
-    element.parentElement.remove(); //remove from display
-
-    listOfMovies = listOfMovies.filter(filterMovies); //remove deleted movie from local storage array
-    console.log(listOfMovies);
-
-    localStorage.setItem("ratedMovies", JSON.stringify(listOfMovies));
-    console.log(`Deleted ${movieTitle} from local storage`);
 }
