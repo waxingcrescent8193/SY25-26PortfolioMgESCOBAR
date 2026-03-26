@@ -90,18 +90,57 @@
 - Give .content a z-index: 1.
 
 - Guided Question: Why does the notice appear on top of the content? What happens if you swap the z‑index values?
+  - *Answer: Notice appears on top of the content due to having a greater z-index. If the z-values were swapped, then content appears above notice.*
 
 - Challenge: 
     * What changes that you have to do on the code that will position .notice box on the top right corner of the .content box? Please write the code on paper as well (both html and css on the part of .notice and .content).
+     - HTML
+     ```
+     <div class="content">Main Content
+          <div class="notice"> Notice! </div>
+      </div>
+     ```
+
+     - CSS
+     ```
+     .content {
+        background: lightyellow;
+        width: 300px;
+        height: 200px;
+        position: fixed;
+        top: 66px;
+        left: 400px;
+        z-index: 1;
+      } 
+            
+    .notice {
+        position: absolute;
+        top: 0;
+        background: orange;
+        padding: 10px;
+        z-index: 2;
+      }
+     ```
     * Try to change the position of .content to relative then to fixed. What do you observed each time?
+      - *Answer: The position of the content box changes from its initial position of beside the sidebar to somehwere way lower, nearer to the footer*
     * What do you observe on about the effect of z-index on .notice and .content boxes?
+      - *Answer: If a  box had the z-index 2, they will be the one that overlaps the other and is visible. In my opinion, z-index is like the layer number of an element.*
 
 3. Please answer the following reflection questions (15 minutes)
 
     a. Could you summarize the differences between the CSS position values (static, relative, absolute, fixed)? 
+     - ***static:** the default position of an element; it is based on the natural flow/position of the elements in the html*
+     - ***relative:** an element's position relative/based on its static position*
+     - ***absolute:** position relative to the closest ancestor/parent element*
+     - ***fixed:** the position of an element relative to the screen/viewport*
 
     b. How does absolute positioning depend on its parent element?
+     - *Answer: Absolute positioning is similar to relative positioning in the sense that the position the properties are being based off is the parent element. For example, top, right, bottom, and left properties of the element would refer to the to top, right, bottom, and left of the parent element.*
 
     c. How do you differentiate sticky from fixed (you can research on sticky)?
+     - *Answer: Sticky acts like relative positioning until the user scrolls away from its parent element and it becomes more like fixed. Additionally, it affects the flow of all the elements, unlike fixed positioning*
 
     d. If you were designing a webpage for a school event, how might you use positioning to highlight important information? Please give concrete examples.
+      - *a*
+      - *b*
+      - *c*
