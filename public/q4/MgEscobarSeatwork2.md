@@ -141,6 +141,6 @@
      - *Answer: Sticky acts like relative positioning until the user scrolls away from its parent element and it becomes more like fixed. Additionally, it affects the flow of all the elements, unlike fixed positioning*
 
     d. If you were designing a webpage for a school event, how might you use positioning to highlight important information? Please give concrete examples.
-      - *a*
-      - *b*
-      - *c*
+      - *Should a navbar be needed, i will used fixed positioning, so that the users can always see it by the top of their screen where ever they scroll.*
+      - *Sticky positioning may be used, for let's say, a small popup of team rankings for an event (HumFest, Foundation Day, or YMSAT) that the users can see at the side of their screen as they scroll through the webpage that is detailing the guidelines for the competitions.*
+      - *For teasers for either the ALAB or School Fair, there can be a puzzle or mini game wherein when a button or element is clicked, it's position changes relative to its original position (there will be three to five different rules for this), and then the user has to look for them all around the webpage*
